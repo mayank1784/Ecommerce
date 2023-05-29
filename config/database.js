@@ -1,9 +1,8 @@
 import mysql from 'mysql2'
 import * as dotenv from 'dotenv' 
-dotenv.config({ path: `../.env` });
-console.log(process.env.DATABASE_URL);
-// const connection = mysql.createConnection(process.env.DATABASE_URL);
-// console.log('Connected to PlanetScale!');
+dotenv.config();
+const pool = mysql.createPool(process.env.DATABASE_URL).promise();
+console.log('Connected to PlanetScale!');
 // connection.end();
 // const pool = mysql.createConnection(process.env.DATABASE_URL).promise();
 // const pool = mysql.createPool({
@@ -20,7 +19,7 @@ console.log(process.env.DATABASE_URL);
 //     keepAliveInitialDelay: 0
 //   }).promise();
 
-// export async function getTables() {
-//     const [rows] = await pool.query('SHOW TABLES');
-//         return rows;
-// };
+export async function getTables() {
+    const [rows] = await pool.query('SHOW TABLES');
+        return rows;
+};
