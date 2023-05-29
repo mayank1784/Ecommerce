@@ -10,20 +10,7 @@ const app = initializeApp({
     measurementId: process.env.measurementId
 });
 const auth = getAuth(app);
-// const auth = firebase.auth();
 
-// // Normal email/password authentication
-// const user = await auth.signInWithEmailAndPassword('email@example.com', 'password');
-
-// // OAuth authentication
-// const provider = new firebase.auth.GoogleAuthProvider();
-
-// const user = await auth.signInWithRedirect(provider);
-
-// // Check the user's role
-// const role = user.uid === 'admin' ? 'admin' : 'user';
-
-// console.log(role);
 const provider = new GoogleAuthProvider();
 
 export async function createUserWithEmail(email, password, name, phoneNo){
