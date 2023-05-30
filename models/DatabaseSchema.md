@@ -1,4 +1,4 @@
-#Database Schema
+# Database Schema
 
 CREATE TABLE `Address` (
 	`address_id` varchar(10) NOT NULL,
@@ -86,7 +86,7 @@ CREATE TABLE `Product` (
 	PRIMARY KEY (`product_id`)
 )
 
-##Type of ID to be inserted
+## Type of ID to be inserted
 
 table_name				last_inserted_id
 
