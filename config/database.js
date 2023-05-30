@@ -23,3 +23,6 @@ export async function getTables() {
     const [rows] = await pool.query('SHOW TABLES');
         return rows;
 };
+export async function createTable(){
+    await pool.query('CREATE TABLE ')
+}

@@ -1,7 +1,9 @@
+import * as dotenv from 'dotenv' 
+dotenv.config();
 import { initializeApp } from "firebase/app";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider } from "firebase/auth";
 const app = initializeApp({
-    apiKey: "AIzaSyAkcaN_9fBqidX7ubtsY1HApc0cmkGY05k",
+    apiKey: process.env.apiKey,
     authDomain: process.env.authDomain,
     projectId: process.env.projectId,
     storageBucket: process.env.storageBucket,

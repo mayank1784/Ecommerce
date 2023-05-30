@@ -1,7 +1,7 @@
 import {config} from 'dotenv'               
 import express from 'express'
 import bodyParser from 'body-parser'
-import {getTables} from './config/database.js';
+import * as databaseConnection from './config/database.js';
 import { createUserWithEmail } from './controllers/auth/auth.js';
 const app = express();
 app.use(
@@ -10,7 +10,7 @@ app.use(
     })
   );
 app.get('/tables', async (req, res) => {
-    const tables = await getTables();
+    const tables = await databaseConnection.getTables();
     res.send(tables);
 });
 app.post('/register', async (req,res) =>{
