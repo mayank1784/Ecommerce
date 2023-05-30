@@ -100,3 +100,98 @@ Inventory				INV001
 Order					ORD001
 OrderItem				ODI001
 Product					PRD001
+
+# Database Schema
+
+The following is the database schema for the application:
+
+### Address
+
+\`\`\`sql
+CREATE TABLE \`Address\` (
+    \`address_id\` varchar(10) NOT NULL,
+    \`customer_id\` varchar(10),
+    \`address_line1\` varchar(255),
+    \`address_line2\` varchar(255),
+    \`city\` varchar(255),
+    \`state\` varchar(255),
+    \`zip_code\` varchar(10),
+    PRIMARY KEY (\`address_id\`)
+);
+\`\`\`
+
+### Admin
+
+\`\`\`sql
+CREATE TABLE \`Admin\` (
+    \`admin_id\` varchar(10) NOT NULL,
+    \`name\` varchar(255),
+    \`email\` varchar(255),
+    \`password\` varchar(255),
+    PRIMARY KEY (\`admin_id\`)
+);
+\`\`\`
+
+### Cart
+
+\`\`\`sql
+CREATE TABLE \`Cart\` (
+    \`cart_id\` varchar(10) NOT NULL,
+    \`customer_id\` varchar(10),
+    PRIMARY KEY (\`cart_id\`)
+);
+\`\`\`
+
+### CartProduct
+
+\`\`\`sql
+CREATE TABLE \`CartProduct\` (
+    \`cart_product_id\` varchar(10) NOT NULL,
+    \`cart_id\` varchar(10),
+    \`product_id\` varchar(10),
+    \`quantity\` int,
+    PRIMARY KEY (\`cart_product_id\`)
+);
+\`\`\`
+
+### Category
+
+\`\`\`sql
+CREATE TABLE \`Category\` (
+    \`category_id\` varchar(10) NOT NULL,
+    \`name\` varchar(255),
+    PRIMARY KEY (\`category_id\`)
+);
+\`\`\`
+
+### Customer
+
+\`\`\`sql
+CREATE TABLE \`Customer\` (
+    \`customer_id\` varchar(10) NOT NULL,
+    \`name\` varchar(255),
+    \`email\` varchar(255),
+    \`password\` varchar(255),
+    \`address_id\` varchar(10),
+    PRIMARY KEY (\`customer_id\`)
+);
+\`\`\`
+
+### IdSequence
+
+\`\`\`sql
+CREATE TABLE \`IdSequence\` (
+    \`table_name\` varchar(255) NOT NULL,
+    \`last_inserted_id\` varchar(10),
+    PRIMARY KEY (\`table_name\`)
+);
+\`\`\`
+
+### Order
+
+\`\`\`sql
+CREATE TABLE \`Order\` (
+    \`order_id\` varchar(10) NOT NULL,
+    \`customer_id\` varchar(10),
+    \`order_date\` date,
+    \`
