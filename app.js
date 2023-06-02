@@ -2,7 +2,7 @@ import {config} from 'dotenv'
 import express from 'express'
 import bodyParser from 'body-parser'
 import * as databaseConnection from './config/database.js';
-import { createUserWithEmail } from './controllers/auth/auth.js';
+import { createUserWithEmail } from './controllers/auth.js';
 const app = express();
 app.use(
     bodyParser.urlencoded({
