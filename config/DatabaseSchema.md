@@ -92,7 +92,7 @@ CREATE TABLE `Product` (
 ## Type of ID to be inserted
 ```
 table_name |||||||||| last_inserted_id
---------------------------------
+
 Address					ADD001
 Admin					ADM001
 Cart					CAR001
@@ -103,4 +103,5 @@ Inventory				INV001
 Order					ORD001
 OrderItem				ODI001
 Product					PRD001
+
 ```
